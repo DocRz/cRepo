@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_list_clear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 13:45:45 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/08/23 18:35:35 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/08/22 22:41:58 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/08/23 19:33:02 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "ft_list.h"
 
-# include <stdlib.h>
-
-typedef	struct			s_list
+void	ft_list_clear(t_list **begin_list)
 {
-	struct s_list	*next;
-	void			*data;
-}						t_list;
+	t_list *free_elem;
 
-t_list					*ft_create_elem(void *data);
-
-#endif
+	if (!(*begin_list))
+		return ;
+	while (*begin_list)
+	{
+		free_elem = *begin_list;
+		*begin_list = (*begin_list)->next;
+		free(free_elem);
+	}
+}

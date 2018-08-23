@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_is_reverse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 13:45:45 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/08/23 18:35:35 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/08/22 20:33:31 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/08/23 18:44:35 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "ft_list.h"
 
-# include <stdlib.h>
-
-typedef	struct			s_list
+void	ft_list_reverse(t_list **begin_list)
 {
-	struct s_list	*next;
-	void			*data;
-}						t_list;
+	t_list *next;
+	t_list *prev;
+	t_list *tracer;
 
-t_list					*ft_create_elem(void *data);
-
-#endif
+	prev = NULL;
+	tracer = *begin_list;
+	while (tracer)
+	{
+		next = tracer->next;
+		tracer->next = prev;
+		prev = tracer;
+		tracer = next;
+	}
+	*begin_list = prev;
+}

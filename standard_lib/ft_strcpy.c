@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 13:45:45 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/08/23 18:35:35 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/08/06 01:38:36 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/08/07 04:07:01 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
-
-# include <stdlib.h>
-
-typedef	struct			s_list
+char	*ft_strcpy(char *dest, char *src)
 {
-	struct s_list	*next;
-	void			*data;
-}						t_list;
+	int c;
 
-t_list					*ft_create_elem(void *data);
-
-#endif
+	c = 0;
+	while (src[c] != '\0')
+	{
+		dest[c] = src[c];
+		c++;
+	}
+	dest[c] = '\0';
+	return (dest);
+}

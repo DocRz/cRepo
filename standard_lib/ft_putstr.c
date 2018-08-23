@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 13:45:45 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/08/23 18:35:35 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/08/04 18:58:46 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/08/07 03:48:02 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+void	ft_putchar(char c);
 
-# include <stdlib.h>
-
-typedef	struct			s_list
+void	ft_putstr(char *str)
 {
-	struct s_list	*next;
-	void			*data;
-}						t_list;
+	int c;
 
-t_list					*ft_create_elem(void *data);
-
-#endif
+	c = 0;
+	while (str[c])
+		ft_putchar(str[c++]);
+}

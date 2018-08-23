@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 13:45:45 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/08/23 18:35:35 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/08/04 19:12:44 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/08/12 19:13:16 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+void	ft_putchar(char c);
 
-# include <stdlib.h>
-
-typedef	struct			s_list
+void	ft_putnbr(int nb)
 {
-	struct s_list	*next;
-	void			*data;
-}						t_list;
-
-t_list					*ft_create_elem(void *data);
-
-#endif
+	if (nb < 0)
+	{
+		if (nb == -2147483648)
+		{
+			ft_putchar('-');
+			ft_putchar('2');
+			nb = 147483648;
+		}
+		else
+		{
+			nb = nb * (-1);
+			ft_putchar('-');
+		}
+	}
+	if (nb >= 10)
+		ft_putnbr(nb / 10);
+	ft_putchar(nb % 10 + '0');
+}

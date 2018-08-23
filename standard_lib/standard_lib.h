@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   standard_lib.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 13:45:45 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/08/23 18:35:35 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/08/15 20:11:52 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/08/15 20:48:46 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#ifndef STANDARD__LIB_
+# define STANDARD__LIB_
 
-# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
 
-typedef	struct			s_list
-{
-	struct s_list	*next;
-	void			*data;
-}						t_list;
+void	ft_putchar(char c);
 
-t_list					*ft_create_elem(void *data);
+int		ft_strlen(char *str);
+
+int		ft_str_is_numeric(char *str);
+
+int		ft_str_is_alpha(char *str);
 
 #endif

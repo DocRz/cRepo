@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 13:45:45 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/08/23 18:35:35 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/08/07 02:26:02 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/08/07 02:39:33 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
-
-# include <stdlib.h>
-
-typedef	struct			s_list
+char	*ft_strcat(char *dest, char *src)
 {
-	struct s_list	*next;
-	void			*data;
-}						t_list;
+	int c;
+	int i;
 
-t_list					*ft_create_elem(void *data);
-
-#endif
+	c = 0;
+	while (dest[c])
+		c++;
+	i = 0;
+	while (src[i])
+		dest[c++] = src[i++];
+	dest[c] = '\0';
+	return (dest);
+}

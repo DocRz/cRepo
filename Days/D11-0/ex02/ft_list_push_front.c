@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_list_push_front.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 13:45:45 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/08/23 18:35:35 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/08/22 10:57:46 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/08/23 19:36:06 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "ft_list.h"
 
-# include <stdlib.h>
-
-typedef	struct			s_list
+void	ft_list_push_front(t_list **begin_list, void *data)
 {
-	struct s_list	*next;
-	void			*data;
-}						t_list;
+	t_list *element;
 
-t_list					*ft_create_elem(void *data);
-
-#endif
+	element = ft_create_elem(data);
+	if (*begin_list == NULL)
+		(*begin_list) = element;
+	else
+	{
+		element->next = *begin_list;
+		*begin_list = element;
+	}
+}

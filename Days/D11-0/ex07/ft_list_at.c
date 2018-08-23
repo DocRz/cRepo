@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_list_at.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 13:45:45 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/08/23 18:35:35 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/08/22 20:18:48 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/08/23 18:44:23 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "ft_list.h"
 
-# include <stdlib.h>
-
-typedef	struct			s_list
+t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 {
-	struct s_list	*next;
-	void			*data;
-}						t_list;
+	t_list *tracer;
 
-t_list					*ft_create_elem(void *data);
-
-#endif
+	tracer = begin_list;
+	if (!tracer)
+		return (tracer);
+	while (tracer)
+	{
+		nbr--;
+		tracer = tracer->next;
+		if (!nbr)
+			return (tracer);
+	}
+	return (tracer);
+}

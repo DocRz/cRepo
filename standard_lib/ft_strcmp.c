@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 13:45:45 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/08/23 18:35:35 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/08/06 20:42:08 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/08/07 04:12:20 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
-
-# include <stdlib.h>
-
-typedef	struct			s_list
+int		ft_strcmp(char *s1, char *s2)
 {
-	struct s_list	*next;
-	void			*data;
-}						t_list;
+	int c;
 
-t_list					*ft_create_elem(void *data);
-
-#endif
+	c = 0;
+	while (s1[c] == s2[c] && s1[c] != '\0')
+		c++;
+	return (s1[c] - s2[c]);
+}

@@ -1,26 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/17 13:45:45 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/08/23 18:35:35 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/08/06 02:09:11 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/08/14 20:10:56 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
-
-# include <stdlib.h>
-
-typedef	struct			s_list
+int		ft_strlen(char *str)
 {
-	struct s_list	*next;
-	void			*data;
-}						t_list;
+	int c;
 
-t_list					*ft_create_elem(void *data);
+	c = 0;
+	while (str[c])
+		c++;
+	return (c);
+}
 
-#endif
+char	*ft_strstr(char *str, char *to_find)
+{
+	int length;
+	int c;
+
+	if (!ft_strlen(to_find))
+		return (str);
+	c = 0;
+	while (str[c])
+	{
+		length = 0;
+		while (str[c + length] == to_find[length])
+			length++;
+		if (!to_find[length])
+			return (&str[c]);
+		c++;
+	}
+	return (0);
+}
+
