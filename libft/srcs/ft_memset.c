@@ -14,17 +14,12 @@
 
 void    *ft_memset(void *b, int c, size_t len)
 {
-    unsigned long   x;
-    unsigned char   val;
+    size_t          t_len;
+    unsigned char   tmp[len];
 
-    if (c < 0)
-    {
-        write(1, "Invalid parameters\n", 19);
-        return (NULL);
-    }
-    val = c + 48;
-    x = -1;
-    while (++x < len)
-        *(unsigned char*)b++ = val;
+    t_len = -1;
+    while (++t_len < len)
+        tmp[t_len] = c + 48;
+    b = tmp;
     return (b);
 }

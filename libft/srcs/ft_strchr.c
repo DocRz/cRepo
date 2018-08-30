@@ -9,18 +9,18 @@
 -> Created By : >>>  {drRz}  <<<                                                      ||||||}
                                                                                       ||||||}
 /||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
-#include "libft.h"
+#include "../includes/libft.h"
 
 char    *ft_strchr(const char *str, int c)
 {
     unsigned int len;
 
     len = 0;
-    while (str[len])
+    while (str)
     {
-        if (str[len] == c + 48)
-            return (str[len]);
-        len++;
+        if (str[0] == c + 48)
+            return ((char*)str);
+        str++;
     }
-    return (0);
+    return (NULL);
 }
