@@ -12,7 +12,7 @@
 
 NAME 	= 	libft
 
-SRC 	= 	$(wildcard srcs/*.c)
+SRC 	= 	$(wildcard srcs/*.c main.c)
 
 OBJS	=	$(SRC:.c=.o)
 
@@ -20,14 +20,14 @@ CC		=	gcc
 
 CFLAGS	+=	-Werror -Wall -Wextra
 
-INCL	=	Iincludes
+# INCL	=	Iincludes
 
 RM		=	rm -f
 
 all		: 	$(NAME)
 
 %.o		: 	%.c	
-			$(CC) $(CFLAGS) -c $< -o $@ -$(INCL)
+			$(CC) $(CFLAGS) -c $< -o $@ # -$(INCL)
 
 $(NAME)	:	$(OBJS)
 			$(CC) -o $(NAME) $(OBJS)
