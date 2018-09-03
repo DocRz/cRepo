@@ -1,8 +1,8 @@
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\
                                                                                        ||||||}
- -> File Name : ft_strncat.c
+ -> File Name : ft_putstr.c
                                                                                        ||||||}
- -> Creation Date : 30-08-2018
+ -> Creation Date : 31-08-2018
                                                                                        ||||||}
  -> Last   Modified :
                                                                                        ||||||}
@@ -12,21 +12,11 @@
 
 #include "../includes/libft.h"
 
-char    *ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
+void    ft_putstr(char *str)
 {
-    int     c;
-    size_t  len;
+    int c;
 
-    c = 0;
-    len = 0;
-    while (s1[c])
-        c++;
-    while (s2[len] && len < n)
-    {
-        s1[c] = s2[len];
-        c++;
-        len++;
-    }
-    s1[c] = '\0';
-    return(s1);
+    c = -1;
+    while (str[++c])
+        ft_putchar(str[c]);
 }
