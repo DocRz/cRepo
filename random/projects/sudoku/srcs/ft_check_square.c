@@ -4,7 +4,7 @@
   ||||||}
   -> Creation Date : 07-09-2018
   ||||||}
-  -> Last Modified : Fri Sep  7 02:19:01 2018
+  -> Last Modified : Fri Sep  7 13:02:40 2018
   ||||||}
   -> Created By : >>>  {drRz}  <<<                                                      ||||||}
   ||||||}
@@ -40,7 +40,7 @@ int     ft_check_square(char **sudoku, int x, int y, char num)
         i = t_i;
         while (i < t_i + 3)
         {
-            if (sudoku[c][i] == num && y != c && x != i)
+            if (sudoku[c][i] == num && y != i && x != c)
                 return (0);
             i++;
         }

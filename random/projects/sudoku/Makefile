@@ -30,7 +30,7 @@ all		: 	$(NAME)
 			$(CC) $(CFLAGS) -c $< -o $@ -$(INCL)
 
 $(NAME)	:	$(OBJS)
-			$(CC) -g -fsanitize=address -o $(NAME) $(OBJS)
+			$(CC) -o $(NAME) $(OBJS)
 
 clean	:
 			$(RM) $(OBJS)

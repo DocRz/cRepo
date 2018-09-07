@@ -1,10 +1,10 @@
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\
                                                                                       ||||||}
--> File Name : ft_print_sudoku.c
+-> File Name : ft_check_sudoku.c
                                                                                       ||||||}
--> Creation Date : 06-09-2018
+-> Creation Date : 07-09-2018
                                                                                       ||||||}
--> Last Modified : Fri Sep  7 12:24:06 2018
+-> Last Modified : Fri Sep  7 13:19:21 2018
                                                                                       ||||||}
 -> Created By : >>>  {drRz}  <<<                                                      ||||||}
                                                                                       ||||||}
@@ -12,22 +12,21 @@
 
 #include "sudoku_header.h"
 
-void    ft_print_sudoku(char **sudoku)
+int     ft_check_sudoku(char **sudoku, int x, int y)
 {
-    int x;
-    int y;
-
-    x = 0;
-    while (x < 9)
+    while (y < 9)
     {
-        y = -1;
-        while (++y < 9)
+        x = 0;
+        while (x < 9)
         {
-            ft_putchar(sudoku[x][y]);
-            if (y != 8)
-                ft_putchar('|');
+            if (sudoku[x][y] != '0')
+                if (ft_check_square(sudoku, x, y, sudoku[x][y]) == 0 ||
+                        ft_check_row(sudoku, x, y, sudoku[x][y]) == 0 ||
+                        ft_check_col(sudoku, x, y, sudoku[x][y]) == 0)
+                    return (0);
+            x++;
         }
-        ft_putchar('\n');
-        x++;
+        y++;
     }
+    return (1);
 }

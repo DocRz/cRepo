@@ -3,6 +3,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 # define BUFF_SIZE 150
 
@@ -17,6 +18,10 @@ void    ft_putnbr(int nbr);
 void    ft_putstr(char *str);
 
 void    ft_putchar(char c);
+
+int     ft_strcmp(char *s1, char *s2);
+
+int     ft_check_sudoku(char **sudoku, int x, int y);
 
 int     ft_solve_sudoku(char **sudoku, int x, int y);
 
