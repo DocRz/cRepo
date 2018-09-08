@@ -4,7 +4,7 @@
                                                                                       ||||||}
 -> Creation Date : 07-09-2018
                                                                                       ||||||}
--> Last Modified : Fri Sep  7 20:12:29 2018
+-> Last Modified : Sat Sep  8 19:10:50 2018
                                                                                       ||||||}
 -> Created By : >>>  {drRz}  <<<                                                      ||||||}
                                                                                       ||||||}
@@ -14,26 +14,65 @@
 
 int     **ft_init_map(char *file_name)
 {
+    int     fd;
+    int     c;
+    int     i;
     int     x;
-    int     y;
     int     ret;
     char    buff[BUFF_SIZE + 1];
     char    *full_buff;
-    int     **
+    int     **map;
+    t_elem  elem[1];
 
     fd = open(file_name, O_RDONLY);
+
+    if (!(full_buff = (char*)malloc(sizeof(char) * 1)))
+        return (NULL);
+    full_buff[0] = '\0';
 
     while ((ret = read(fd, buff, BUFF_SIZE)))
     {
         buff[ret] = '\0';
-        full_buff = ft_concat_str(buff);
+        full_buff = ft_strcat(full_buff, buff);
     }
     x = 0;
+    elem[0].size = 0;
     while (full_buff[x] != '\n')
-        x++;
+    {
+        while (full_buff[x] >= '0' && full_buff[x] <= '9')
+        {
+            elem[0].size = elem[0].size * 10 + (full_buff[x] - 48);
+            x++;
+        }
+        elem[0].free = full_buff[x++];
+        elem[0].obs = full_buff[x++];
+        elem[0].square = full_buff[x++];
+    }
+    if (!(map = (int**)malloc(sizeof(int*) * elem[0].size)))
+        return (NULL);
+    c = 0;
+    while (c < elem[0].size)
+    {
+        if (!(map[c] = (int*)malloc(sizeof(int) * elem[0].size)))
+            return (NULL);
+        c++;
+    }
+    c = 0;
+    x++;
     while(full_buff[x])
     {
-        
+        i = 0;
+        while (full_buff[x] != '\n')
+        {
+            if (full_buff[x] == elem[0].free)
+                map[c][i] = 1;
+            if (full_buff[x] == elem[0].obs)
+                map[c][i] = 0;
+            x++;
+            i++;
+        }
+        c++;
+        x++;
     }
-
+    return (map);
 }

@@ -1,10 +1,10 @@
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\
                                                                                       ||||||}
--> File Name : main.c
+-> File Name : ft_putnbr.c
                                                                                       ||||||}
--> Creation Date : 26-08-   2018
+-> Creation Date : 05-09-2018
                                                                                       ||||||}
--> Last   Modified : Sun Aug 26 15:40:03 2018
+-> Last Modified : Sat Sep  8 19:01:38 2018
                                                                                       ||||||}
 -> Created By : >>>  {drRz}  <<<                                                      ||||||}
                                                                                       ||||||}
@@ -12,16 +12,19 @@
 
 #include "bsq_header.h"
 
-int     main(int ac, char **av)
+void    ft_putnbr(int nb)
 {
-    int **map;
-
-    if (ac == 2)
-        map = ft_init_map(av[1]);
-    else
+    if (nb < 0)
     {
-        ft_putstr("No valid file to open\n");
-        return (1);
+        ft_putchar('-');
+        if (nb == -2147483648)
+        {
+            ft_putchar('2');
+            nb = -147483648;
+        }
+        nb *= -1;
     }
-    return (0);
+    if (nb > 9)
+        ft_putnbr(nb / 10);
+    ft_putchar(nb % 10 + 48);
 }
