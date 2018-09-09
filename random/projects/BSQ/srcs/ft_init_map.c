@@ -4,7 +4,7 @@
                                                                                       ||||||}
 -> Creation Date : 07-09-2018
                                                                                       ||||||}
--> Last Modified : Sat Sep  8 19:10:50 2018
+-> Last Modified : Sat Sep  8 21:41:13 2018
                                                                                       ||||||}
 -> Created By : >>>  {drRz}  <<<                                                      ||||||}
                                                                                       ||||||}
@@ -12,7 +12,7 @@
 
 #include "bsq_header.h"
 
-int     **ft_init_map(char *file_name)
+int     **ft_init_map(char *file_name, t_elem *elem)
 {
     int     fd;
     int     c;
@@ -22,7 +22,6 @@ int     **ft_init_map(char *file_name)
     char    buff[BUFF_SIZE + 1];
     char    *full_buff;
     int     **map;
-    t_elem  elem[1];
 
     fd = open(file_name, O_RDONLY);
 
@@ -74,5 +73,6 @@ int     **ft_init_map(char *file_name)
         c++;
         x++;
     }
+    free(full_buff);
     return (map);
 }
