@@ -4,7 +4,7 @@
   ||||||}
   -> Creation Date : 07-09-2018
   ||||||}
-  -> Last Modified : Sun Sep 16 19:36:48 2018
+  -> Last Modified : Mon Sep 17 01:48:09 2018
   ||||||}
   -> Created By : >>>  {drRz}  <<<                                                      ||||||}
   ||||||}
@@ -58,7 +58,8 @@ int     **ft_init_map(char *file_name, t_elem *elem)
     char    *full_buff;
     int     **map;
 
-    fd = open(file_name, O_RDONLY);
+    if((fd = open(file_name, O_RDONLY)) == -1)
+        fd = 0;
 
     if (!(full_buff = (char*)malloc(sizeof(char) * 1)))
         return (NULL);
@@ -66,6 +67,11 @@ int     **ft_init_map(char *file_name, t_elem *elem)
 
     while ((ret = read(fd, buff, BUFF_SIZE)))
     {
+        if (ret == -1)
+        {
+            write(2, "read() error\n", 13);
+            return (NULL);
+        }
         buff[ret] = '\0';
         full_buff = ft_strcat(full_buff, buff);
     }

@@ -30,6 +30,10 @@ int     ft_strlen(char *str);
 
 int     **ft_init_map(char *file_name, t_elem *elem);
 
+int     ft_skip_first(char *str);
+
+t_elem  *ft_init_elem(char *full_buff, t_elem *elem);
+
 char    *ft_strcat(char *buff, char *new_buff);
 
 int     **ft_solve_bsq(int **map, t_elem *elem, int *max);
