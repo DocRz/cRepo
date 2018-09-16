@@ -12,14 +12,14 @@
 
 #include "bsq_header.h"
 
-void    ft_print_solved(char **map, int size)
+void    ft_print_solved(char **map, int size, int y)
 {
     int x;
 
     x = -1;
     while (++x < size)
     {
-        ft_putstrb(map[x], size);
+        ft_putstrb(map[x], y);
         ft_putchar('\n');
     }
 }

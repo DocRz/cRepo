@@ -33,7 +33,7 @@ int     **ft_solve_bsq(int **map, t_elem *elem, int *max)
     while (x < elem[0].size)
     {
         y = 0;
-        while (y < elem[0].size)
+        while (y < elem[0].size_y)
         {
             if (map[x][y] == 0)
                 y++;

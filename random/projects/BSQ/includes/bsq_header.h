@@ -14,6 +14,7 @@
 typedef struct  g_elem
 {
     int     size;
+    int     size_y;
     char    free;
     char    obs;
     char    square;
@@ -39,7 +40,7 @@ char    **ft_set_map(int **map, t_elem *elem, int *max);
 
 char    **ft_set_square(char **print_map, int x, int y, int num, t_elem *elem);
 
-void    ft_print_solved(char **map, int size);
+void    ft_print_solved(char **map, int size, int y);
 
 void    ft_putstrb(char *str, int len);
 

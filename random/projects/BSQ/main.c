@@ -29,7 +29,7 @@ int     main(int ac, char **av)
     }
     map = ft_solve_bsq(map, elem, max);
     map_print = ft_set_map(map, elem, max);
-    ft_print_solved(map_print, elem[0].size);
+    ft_print_solved(map_print, elem[0].size, elem[0].size_y);
     free(map_print);
     free(map);
     return (0);

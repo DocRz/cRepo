@@ -1,16 +1,51 @@
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\
-                                                                                      ||||||}
--> File Name : ft_init_map.c
-                                                                                      ||||||}
--> Creation Date : 07-09-2018
-                                                                                      ||||||}
--> Last Modified : Sat Sep  8 21:41:13 2018
-                                                                                      ||||||}
--> Created By : >>>  {drRz}  <<<                                                      ||||||}
-                                                                                      ||||||}
-/||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+  ||||||}
+  -> File Name : ft_init_map.c
+  ||||||}
+  -> Creation Date : 07-09-2018
+  ||||||}
+  -> Last Modified : Sun Sep 16 19:36:48 2018
+  ||||||}
+  -> Created By : >>>  {drRz}  <<<                                                      ||||||}
+  ||||||}
+  /||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 
 #include "bsq_header.h"
+
+int     ft_skip_first(char *str)
+{
+    int x;
+
+    x = 0;
+    while (str[x] != '\n')
+        x++;
+    return (x + 1);
+}
+
+t_elem  *ft_init_elem(char *full_buff, t_elem *elem)
+{
+    int x;
+    int c;
+
+    x = 0;
+    c = 0;
+    elem[0].size = 0;
+    while (full_buff[x] != '\n')
+    {
+        while (full_buff[x] >= '0' && full_buff[x] <= '9')
+        {
+            elem[0].size = elem[0].size * 10 + (full_buff[x] - 48);
+            x++;
+        }
+        elem[0].free = full_buff[x++];
+        elem[0].obs = full_buff[x++];
+        elem[0].square = full_buff[x++];
+    }
+    while (full_buff[++x] != '\n')
+        c++;
+    elem[0].size_y = c;
+    return (elem);
+}
 
 int     **ft_init_map(char *file_name, t_elem *elem)
 {
@@ -34,30 +69,18 @@ int     **ft_init_map(char *file_name, t_elem *elem)
         buff[ret] = '\0';
         full_buff = ft_strcat(full_buff, buff);
     }
-    x = 0;
-    elem[0].size = 0;
-    while (full_buff[x] != '\n')
-    {
-        while (full_buff[x] >= '0' && full_buff[x] <= '9')
-        {
-            elem[0].size = elem[0].size * 10 + (full_buff[x] - 48);
-            x++;
-        }
-        elem[0].free = full_buff[x++];
-        elem[0].obs = full_buff[x++];
-        elem[0].square = full_buff[x++];
-    }
+    elem = ft_init_elem(full_buff, elem);
     if (!(map = (int**)malloc(sizeof(int*) * elem[0].size)))
         return (NULL);
     c = 0;
     while (c < elem[0].size)
     {
-        if (!(map[c] = (int*)malloc(sizeof(int) * elem[0].size)))
+        if (!(map[c] = (int*)malloc(sizeof(int) * elem[0].size_y)))
             return (NULL);
         c++;
     }
     c = 0;
-    x++;
+    x = ft_skip_first(full_buff);
     while(full_buff[x])
     {
         i = 0;

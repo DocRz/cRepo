@@ -47,14 +47,14 @@ char    **ft_set_map(int **map, t_elem *elem, int *max)
         return (NULL);
     x = -1;
     while (++x < elem[0].size)
-        if (!(print_map[x] = (char*)malloc(sizeof(char) * (elem[0].size + 1))))
+        if (!(print_map[x] = (char*)malloc(sizeof(char) * (elem[0].size_y + 1))))
             return (NULL);
     x = 0;
     set = 1;
     while (x < elem[0].size)
      {
          y = 0;
-         while (y < elem[0].size)
+         while (y < elem[0].size_y)
          {
              if (map[x][y] == 0)
                  print_map[x][y] = elem[0].obs;
