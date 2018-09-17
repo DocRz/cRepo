@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/08/16 10:14:17 by anrzepec          #+#    #+#              #
-#    Updated: 2018/08/20 16:07:23 by anrzepec         ###   ########.fr        #
+#    Created: 2018/09/17 19:12:20 by anrzepec          #+#    #+#              #
+#    Updated: 2018/09/17 19:13:33 by anrzepec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,14 +20,14 @@ CC		=	gcc
 
 CFLAGS	+=	-Werror -Wall -Wextra
 
-# INCL	=	Iincludes
+INCL	=	includes
 
 RM		=	rm -f
 
 all		: 	$(NAME)
 
 %.o		: 	%.c	
-			$(CC) $(CFLAGS) -c $< -o $@ # -$(INCL)
+			$(CC) $(CFLAGS) -c $< -o $@  -I$(INCL)
 
 $(NAME)	:	$(OBJS)
 			$(CC) -o $(NAME) $(OBJS)
