@@ -4,7 +4,7 @@
                                                                                       ||||||}
 -> Creation Date : 30-08-2018
                                                                                       ||||||}
--> Last Modified : Mon Sep  3 14:25:56 2018
+-> Last Modified : Wed Sep 12 23:09:57 2018
                                                                                       ||||||}
 -> Created By : >>>  {drRz}  <<<                                                      ||||||}
                                                                                       ||||||}
@@ -14,7 +14,7 @@
 
 # define BUFF_SIZE  400
 
-int     main(void)
+int     main(int ac, char **av)
 {
     const char      *src;
     const char      *dst;
@@ -23,16 +23,6 @@ int     main(void)
     int             dst_len;
     int             ret;
 
-
-    write(1, "Length of src:", 14);
-    ret = read(1, buff, BUFF_SIZE);
-    buff[ret] = '\0';
-    src_len = ft_atoi(buff);
-
-    write(1, "Length of dst:", 14);
-    ret = read(1, buff, BUFF_SIZE);
-    buff[ret] = '\0';
-    dst_len = ft_atoi(buff);
 
     if (!(src = (char*)malloc(sizeof(char) * src_len + 1)))
         return (1);
