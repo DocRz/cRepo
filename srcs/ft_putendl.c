@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/17 18:57:05 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/10/08 16:33:37 by andrewrze        ###   ########.fr       */
+/*   Created: 2018/10/30 18:18:57 by andrewrze         #+#    #+#             */
+/*   Updated: 2018/10/31 01:11:04 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+void    ft_putendl(char const *s)
 {
-    char    *tmp;
-    size_t  len;
+    int c;
 
-    tmp = s;
-    len = 0;
-    if (n > 0)
-    {
-        while (len < n)
-        {
-            tmp[len] = 0;
-            len++;
-        }
-    }
+    c = -1;
+    while (s[++c])
+        write(1, &s[c], 1);
+    write(1, "\n", 1);
 }

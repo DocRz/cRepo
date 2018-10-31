@@ -6,17 +6,17 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 19:08:52 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/09/17 19:08:59 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/10/30 18:18:18 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putstr(char *str)
+void    ft_putstr(const char *str)
 {
     int c;
 
     c = -1;
     while (str[++c])
-        ft_putchar(str[c]);
+        write(1, &str[c], 1);
 }

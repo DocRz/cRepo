@@ -6,7 +6,7 @@
 #    By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/17 19:12:20 by anrzepec          #+#    #+#              #
-#    Updated: 2018/09/17 19:13:33 by anrzepec         ###   ########.fr        #
+#    Updated: 2018/09/18 18:42:55 by anrzepec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ all		: 	$(NAME)
 			$(CC) $(CFLAGS) -c $< -o $@  -I$(INCL)
 
 $(NAME)	:	$(OBJS)
-			$(CC) -o $(NAME) $(OBJS)
+			$(CC) -g -fsanitize=address -o $(NAME) $(OBJS)
 
 
 clean	:

@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/17 18:57:05 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/10/08 16:33:37 by andrewrze        ###   ########.fr       */
+/*   Created: 2018/10/30 17:49:50 by andrewrze         #+#    #+#             */
+/*   Updated: 2018/10/31 01:36:14 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+int     main(void)
 {
-    char    *tmp;
-    size_t  len;
-
-    tmp = s;
-    len = 0;
-    if (n > 0)
-    {
-        while (len < n)
-        {
-            tmp[len] = 0;
-            len++;
-        }
-    }
+    ft_putendl(ft_itoa(-43431995));
+    ft_putendl(ft_itoa(19434395));   
+    ft_putendl_fd(ft_itoa(MAX_INT), 2);
+    ft_putendl_fd(ft_itoa(MIN_INT), 1);
+    return (0);
 }
