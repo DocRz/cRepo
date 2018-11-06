@@ -6,26 +6,32 @@
 /*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 17:49:50 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/10/31 21:33:11 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/03 17:48:18 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     main(void)
+int     main(int ac, char **av)
 {
+    int x;
     int c;
     char **s;
+    char *str;
 
-    c = -1;
-    ft_putendl(ft_itoa(-43431995));
-    ft_putendl(ft_itoa(19434395));   
-    ft_putendl_fd(ft_itoa(MAX_INT), 2);
-    ft_putendl_fd(ft_itoa(MIN_INT), 1);
-
-    ft_putstr("Split str: \n");
-    s = ft_strsplit("*********andrew*bonjour****rzepecki*", '*');
-    while (s[++c] != NULL)
-        ft_putendl(s[c]);
+    c = 0;
+    while (++c < ac)
+    {
+        str = ft_strtrim(av[c]);
+        ft_putendl(str);
+        ft_putendl("After trim");
+        s = ft_strsplit(str, ' ');
+        x = -1;
+        while (s[++x] != NULL)
+            ft_putendl(s[x]);
+        free(s);
+        free(str);
+        ft_putstr("\n");
+    }
     return (0);
 }

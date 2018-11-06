@@ -6,7 +6,7 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 19:12:29 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/10/31 20:44:57 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/03 15:19:16 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,7 @@ void        ft_putnbr_fd(int n, int fd);
 char        *ft_itoa(int n);
 
 char        **ft_strsplit(char const *s, char c);
+
+char        *ft_strtrim(char const *s);
 
 #endif

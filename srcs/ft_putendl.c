@@ -6,7 +6,7 @@
 /*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/30 18:18:57 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/10/31 01:11:04 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/03 17:57:17 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void    ft_putendl(char const *s)
 {
-    int c;
-
-    c = -1;
-    while (s[++c])
-        write(1, &s[c], 1);
+    while (s)
+    {
+        write(1, &s, 1);
+        s++;
+    }
     write(1, "\n", 1);
 }
