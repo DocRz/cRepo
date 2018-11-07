@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
+/*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/30 18:18:57 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/11/03 17:57:17 by andrewrze        ###   ########.fr       */
+/*   Created: 2018/11/06 15:01:08 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/11/06 17:24:50 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putendl(char const *s)
+void	ft_putendl(char const *s)
 {
-    while (s)
-    {
-        write(1, &s, 1);
-        s++;
-    }
-    write(1, "\n", 1);
+	int c;
+
+	c = -1;
+	while (s[++c])
+		write(1, &s[c], 1);
+	write(1, "\n", 1);
 }

@@ -6,25 +6,13 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 18:57:05 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/10/08 16:33:37 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/07 14:08:17 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    char    *tmp;
-    size_t  len;
-
-    tmp = s;
-    len = 0;
-    if (n > 0)
-    {
-        while (len < n)
-        {
-            tmp[len] = 0;
-            len++;
-        }
-    }
+	ft_memset(s, 0, n);
 }

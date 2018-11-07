@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrewrzepecki <anrzepec@student.42.f      +#+  +:+       +#+        */
+/*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/30 19:35:59 by andrewrze         #+#    #+#             */
-/*   Updated: 2018/10/30 19:38:52 by andrewrze        ###   ########.fr       */
+/*   Created: 2018/11/06 15:04:28 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/11/06 15:04:34 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putstr_fd(char const *s, int fd)
+void	ft_putstr_fd(char const *s, int fd)
 {
-    int c;
+	int c;
 
-    c = -1;
-    while (s[++c])
-        write(fd, &s[c], 1);
+	c = -1;
+	while (s[++c])
+		write(fd, &s[c], 1);
 }

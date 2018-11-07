@@ -3,25 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/17 19:09:24 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/09/17 19:09:34 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/11/06 15:06:07 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/11/07 17:11:56 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
-    unsigned int len;
+	unsigned int len;
 
-    len = 0;
-    while (str)
-    {
-        if (str[0] == c + 48)
-            return ((char*)str);
-        str++;
-    }
-    return (NULL);
+	len = 0;
+	while (str[len])
+	{
+		if (str[len] == (char)c)
+			return ((char*)str + len);
+		len++;
+	}
+	if (str[len] == c)
+		return ((char*)str + len);
+	else
+		return (NULL);
 }

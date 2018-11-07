@@ -6,7 +6,7 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 19:12:29 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/03 15:19:16 by andrewrze        ###   ########.fr       */
+/*   Updated: 2018/11/07 19:03:54 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,58 +21,62 @@
 # include <unistd.h>
 # include <string.h>
 
-void        ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
+void		*ft_memchr(void const *s, int c, size_t n);
 
-void        *ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
+void		*ft_memcpy(void *dst, const void *src, size_t n);
 
-char        *ft_strchr(char const *str, int c);
+void		*ft_memccpy(void *dst, const void *src, int c, size_t n);
 
-void        ft_bzero(void *s, size_t n);
+char		*ft_strchr(char const *str, int c);
 
-char        *ft_strcat(char *restrict s1, char const *restrict s2);
+char		*ft_strrchr(char const *str, int c);
 
-char        *ft_strncat(char *restrict s1, char const *restrict s2, size_t n);
+void		ft_bzero(void *s, size_t n);
 
-void        *ft_memset(void *b, int c, size_t len);
+char		*ft_strcat(char *s1, char const *s2);
 
-int         ft_strlen(char const *str);
+char		*ft_strncat(char *s1, char const *s2, size_t n);
 
-char        *ft_strchr(char const *str, int c);
+void		*ft_memset(void *b, int c, size_t len);
 
-void        ft_putstr(char const *str);
+int			ft_strlen(char const *str);
 
-void        ft_putchar(char c);
+char		*ft_strchr(char const *str, int c);
 
-char const  *ft_strcpy(char *dst, char const *src);
+void		ft_putstr(char const *str);
 
-char        *ft_strncpy(char *dst, char const *src, size_t len);
+void		ft_putchar(char c);
 
-int         ft_atoi(char *str);
+char const	*ft_strcpy(char *dst, char const *src);
 
-char        *strdup(char const *s1);
+char		*ft_strncpy(char *dst, char const *src, size_t len);
 
-int         ft_isalpha(int c);
+int			ft_atoi(char *str);
 
-int         ft_isdigit(int c);
+char		*strdup(char const *s1);
 
-int         ft_isalnum(int c);
+int			ft_isalpha(int c);
 
-void        ft_putendl(char const *s);
+int			ft_isdigit(int c);
 
-void        ft_putnbr(int n);
+int			ft_isalnum(int c);
 
-void        ft_putchar_fd(char c, int fd);
+void		ft_putendl(char const *s);
 
-void        ft_putstr_fd(char const *s, int fd);
+void		ft_putnbr(int n);
 
-void        ft_putendl_fd(char const *s, int fd);
+void		ft_putchar_fd(char c, int fd);
 
-void        ft_putnbr_fd(int n, int fd);
+void		ft_putstr_fd(char const *s, int fd);
 
-char        *ft_itoa(int n);
+void		ft_putendl_fd(char const *s, int fd);
 
-char        **ft_strsplit(char const *s, char c);
+void		ft_putnbr_fd(int n, int fd);
 
-char        *ft_strtrim(char const *s);
+char		*ft_itoa(int n);
+
+char		**ft_strsplit(char const *s, char c);
+
+char		*ft_strtrim(char const *s);
 
 #endif

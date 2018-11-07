@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   main2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 15:03:48 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/06 15:04:04 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/11/07 19:53:02 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/11/07 20:10:25 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *str)
-{
-	int c;
-
-	c = -1;
-	while (str[++c])
-		write(1, &str[c], 1);
+int main () {
+   const char src[50] = "http://www.tutorialspoint.com";
+   char dest[50];
+   ft_strcpy(dest, "Heloooo");
+   printf("Before memcpy dest = %s\n", dest);
+   ft_memccpy(dest, src, '.', strlen(src) + 1);
+   printf("After memccpy dest = %s\n", dest);
+   
+   return(0);
 }
