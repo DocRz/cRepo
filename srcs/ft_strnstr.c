@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 14:50:32 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/08 17:40:10 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/11/08 15:52:53 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/11/08 20:40:45 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char	*ft_strnstr(char const *haystack, char const *needle, size_t len)
 {
-	size_t			len;
-	unsigned char	*t_src;
-	unsigned char	*t_dst;
+	size_t	c;
+	size_t	found;
 
-	t_src = (unsigned char*)src;
-	t_dst = (unsigned char*)dst;
-	len = 0;
-	while (len < n)
+	if (!ft_strlen(needle))
+		return ((char*)haystack);
+	c = 0;
+	while (haystack[c] && c < len)
 	{
-		if (t_src[len] == (unsigned char)c)
-		{
-			t_dst[len] = (unsigned char)t_src[len];
-			return (dst + (len + 1));
-		}
-		t_dst[len] = (unsigned char)t_src[len];
-		len++;
+		found = 0;
+		while (haystack[c + found] == needle[found] && haystack[c + found]
+				&& (c + found < len))
+			found++;
+		if (!needle[found])
+			return ((char*)&haystack[c]);
+		c++;
 	}
 	return (NULL);
 }

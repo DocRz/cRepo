@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 15:40:14 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/06 16:32:27 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/08 21:34:14 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@ static char		*ft_settrim(char const *s, int *ends)
 	return (str);
 }
 
+static char		*ft_set_one(void)
+{
+	char *str;
+
+	if (!(str = (char*)malloc(sizeof(char) * 1)))
+		return (NULL);
+	str[0] = '\0';
+	return (str);
+}
+
 static int		ft_isspace(char c)
 {
 	if (c == '\t' || c == ' ' || c == '\n')
@@ -44,16 +54,15 @@ char			*ft_strtrim(char const *s)
 	int		c;
 	char	*str;
 
-	c = 0;
+	c = -1;
 	mrk[0] = 0;
-	while (s[c])
-	{
+	if (!s)
+		return (NULL);
+	while (s[++c])
 		if (ft_isspace(s[c]) && c == mrk[0])
 			mrk[0]++;
-		c++;
-	}
 	if (mrk[0] == c)
-		return (str = NULL);
+		return (str = ft_set_one());
 	c--;
 	mrk[1] = c;
 	while (c >= 0)

@@ -6,13 +6,13 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 15:08:03 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/07 18:49:24 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/08 16:58:34 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	int		c;
 	char	*dup;

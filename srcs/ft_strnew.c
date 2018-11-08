@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 14:50:32 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/08 17:40:10 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/11/08 13:20:33 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/11/08 13:24:16 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char		*ft_strnew(size_t size)
 {
-	size_t			len;
-	unsigned char	*t_src;
-	unsigned char	*t_dst;
+	size_t	c;
+	char	*str;
 
-	t_src = (unsigned char*)src;
-	t_dst = (unsigned char*)dst;
-	len = 0;
-	while (len < n)
-	{
-		if (t_src[len] == (unsigned char)c)
-		{
-			t_dst[len] = (unsigned char)t_src[len];
-			return (dst + (len + 1));
-		}
-		t_dst[len] = (unsigned char)t_src[len];
-		len++;
-	}
-	return (NULL);
+	if (!(str = (char*)malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	c = -1;
+	while (++c < size)
+		str[c] = '\0';
+	str[c] = '\0';
+	return (str);
 }

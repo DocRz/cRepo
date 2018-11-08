@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 14:37:40 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/06 14:42:47 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/08 17:14:06 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ char		*ft_itoa(int n)
 	tmp = n;
 	while ((tmp = tmp / 10) != 0)
 		divider++;
-	str = (char*)malloc(sizeof(char) * (divider + 1));
+	if (!(str = (char*)malloc(sizeof(char) * (divider + 1))))
+		return (NULL);
 	tmp = 0;
 	if (n < 0)
 		str[0] = '-';

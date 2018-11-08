@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 14:43:20 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/07 18:24:20 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/08 21:43:59 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_atoi(char *str)
 {
-	int	c;
-	int	res;
-	int	neg;
+	int		c;
+	long	res;
+	int		neg;
 
 	neg = 1;
 	res = 0;
@@ -36,5 +36,5 @@ int		ft_atoi(char *str)
 		c++;
 	}
 	res *= neg;
-	return (res);
+	return ((int)res);
 }
