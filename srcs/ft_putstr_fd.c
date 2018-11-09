@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 15:04:28 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/06 15:04:34 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/09 14:22:15 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void	ft_putstr_fd(char const *s, int fd)
 {
 	int c;
 
-	c = -1;
-	while (s[++c])
-		write(fd, &s[c], 1);
+	if (s && fd != -1)
+	{
+		c = -1;
+		while (s[++c])
+			write(fd, &s[c], 1);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 14:37:40 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/08 17:14:06 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/09 14:12:54 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,9 @@ char		*ft_itoa(int n)
 	divider = (n < 0) ? (get_divider(n) * -1) : get_divider(n);
 	while (divider > 1 || divider < -1)
 	{
-		str[c] = n / divider + 48;
+		str[c++] = n / divider + 48;
 		n %= divider;
 		divider /= 10;
-		c++;
 	}
 	str[c] = (n < 0) ? (n * -1 + 48) : n + 48;
 	str[c + 1] = '\0';

@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 15:13:37 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/08 15:25:38 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/09 17:44:07 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 size_t		ft_strlcat(char *dst, char const *src, size_t size)
 {
-	size_t d_size;
+	size_t s_size;
 	size_t x;
 
 	x = 0;
-	d_size = ft_strlen(dst);
+	s_size = ft_strlen(src);
 	while (*dst && size)
 	{
 		dst++;
@@ -32,7 +32,7 @@ size_t		ft_strlcat(char *dst, char const *src, size_t size)
 		src++;
 		size--;
 	}
-	if (size == 1)
+	if (size)
 		*dst = '\0';
-	return (x + d_size);
+	return (x + s_size);
 }

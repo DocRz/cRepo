@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 12:51:36 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/08 17:49:32 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/09 13:50:16 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void		ft_strdel(char **as)
 {
-	free(*as);
-	as = NULL;
+	ft_memdel((void**)as);
 }
