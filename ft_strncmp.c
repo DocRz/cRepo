@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 14:20:03 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/08 21:51:53 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/11 17:07:58 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,8 @@ int		ft_strncmp(char const *s1, char const *s2, size_t n)
 			return ((unsigned char)s1[c] - (unsigned char)s2[c]);
 		c++;
 	}
-	return ((unsigned char)s1[c] - (unsigned char)s2[c]);
+	if (c == n)
+		return ((unsigned char)s1[c - 1] - (unsigned char)s2[c - 1]);
+	else
+		return ((unsigned char)s1[c] - (unsigned char)s2[c]);
 }

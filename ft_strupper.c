@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strupper.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 14:34:19 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/11 17:32:53 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/11/11 17:51:40 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/11/11 18:00:00 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memmove(void *dst, void const *src, size_t len)
+int			ft_strupper(char const *s)
 {
-	char	*t_dst;
-	char	*t_src;
+	size_t i;
 
-	t_dst = (char*)dst;
-	t_src = (char*)src;
-	if (dst < src)
-		ft_memcpy(dst, src, len);
-	else
+	i = 0;
+	if (s)
 	{
-		while (len > 0)
+		while (s[i])
 		{
-			t_dst[len - 1] = t_src[len - 1];
-			len--;
+			if (ft_isalpha(s[i]) && s[i] < 'a')
+				i++;
+			else
+				return (0);
 		}
+		return (1);
 	}
-	return (dst);
+	return (0);
 }

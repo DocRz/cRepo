@@ -6,7 +6,7 @@
 #    By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/17 19:12:20 by anrzepec          #+#    #+#              #
-#    Updated: 2018/11/10 17:37:01 by anrzepec         ###   ########.fr        #
+#    Updated: 2018/11/12 12:48:09 by anrzepec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,12 @@ SRC 	= ft_atoi.c \
 		  ft_strsub.c \
 		  ft_strtrim.c \
 		  ft_tolower.c \
-		  ft_toupper.c 
+		  ft_toupper.c \
+		  ft_strndup.c \
+		  ft_strnum.c \
+		  ft_stralpha.c \
+		  ft_strupper.c \
+		  ft_strlower.c 
 
 OBJS	=	$(SRC:.c=.o)
 
@@ -77,24 +82,24 @@ CC		=	gcc
 
 CFLAGS	+=	-Werror -Wall -Wextra
 
-INCL	=	includes
-
 RM		=	rm -f
 
-LIB		=	ar rcs
+LIB		=	ar rc
 
-all		: 	$(NAME)
+all:		$(NAME)
 
-%.o		: 	%.c	
-	$(CC) $(CFLAGS) -c $< -o $@  -I$(INCL)
+%.o:		%.c	
+			$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME)	:	$(OBJS)
-	$(LIB) $(NAME) $(OBJS)
+$(NAME):	$(OBJS)
+			$(LIB) $(NAME) $(OBJS)
 
-clean	:
-	$(RM) $(OBJS)
+clean:
+			$(RM) $(OBJS)
 
-fclean:	clean
-	$(RM) $(NAME)
+fclean:		clean
+			$(RM) $(NAME)
 
-re		:	fclean all
+re:			fclean all
+
+.PHONY: re all fclean clean

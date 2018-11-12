@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_stralpha.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 14:34:19 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/11 17:32:53 by anrzepec         ###   ########.fr       */
+/*   Created: 2018/11/11 17:49:06 by anrzepec          #+#    #+#             */
+/*   Updated: 2018/11/11 17:59:33 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memmove(void *dst, void const *src, size_t len)
+int			ft_stralpha(char const *s)
 {
-	char	*t_dst;
-	char	*t_src;
+	size_t i;
 
-	t_dst = (char*)dst;
-	t_src = (char*)src;
-	if (dst < src)
-		ft_memcpy(dst, src, len);
-	else
+	i = 0;
+	if (s)
 	{
-		while (len > 0)
+		while (s[i])
 		{
-			t_dst[len - 1] = t_src[len - 1];
-			len--;
+			if (ft_isalpha(s[i]))
+				i++;
+			else
+				return (0);
 		}
+		return (1);
 	}
-	return (dst);
+	return (0);
 }

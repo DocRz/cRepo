@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 14:52:03 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/10 14:20:35 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/12 12:36:30 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	len;
-	char	*t_src;
-	char	*t_dst;
+	size_t			len;
+	unsigned char	*t_src;
+	unsigned char	*t_dst;
 
-	t_src = (char*)src;
-	t_dst = dst;
+	t_src = (unsigned char*)src;
+	t_dst = (unsigned char*)dst;
 	len = 0;
 	while (len < n)
 	{

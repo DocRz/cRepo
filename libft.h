@@ -6,19 +6,15 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 19:12:29 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/10 17:46:37 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/11 18:22:10 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define MAX_LONG +9223372036854775807
-# define MIN_LONG -9223372036854775808
 # define MIN_INT -2147483648
 # define MAX_INT 2147483647
-# include <stdio.h>
-# include <errno.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
@@ -62,11 +58,12 @@ size_t				ft_strlcat(char *dst, char const *src, size_t size);
 
 char				*ft_strstr(char const *haystack, char const *needle);
 
-char				*ft_strnstr(char const *h, char const *n, size_t len);
+char				*ft_strnstr(char const *haystack, char const *needle,
+					size_t len);
 
 void				ft_putchar(char c);
 
-char const			*ft_strcpy(char *dst, char const *src);
+char				*ft_strcpy(char *dst, char const *src);
 
 char				*ft_strjoin(char const *s1, char const *s2);
 
@@ -77,6 +74,8 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_strequ(char const *s1, char const *s2);
 
 int					ft_strcmp(char const *s1, char const *s2);
+
+char				*ft_strndup(char const *s1, size_t n);
 
 int					ft_strncmp(char const *s1, char const *s2, size_t n);
 
@@ -147,5 +146,13 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+int					ft_strnum(char const *s);
+
+int					ft_stralpha(char const *s);
+
+int					ft_strupper(char const *s);
+
+int					ft_strlower(char const *s);
 
 #endif
