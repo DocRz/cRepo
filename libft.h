@@ -6,15 +6,14 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 19:12:29 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/11 18:22:10 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/13 11:01:28 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define MIN_INT -2147483648
-# define MAX_INT 2147483647
+# define _MIN_INT_ -2147483648
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
@@ -99,7 +98,7 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char				*ft_strncpy(char *dst, char const *src, size_t len);
 
-int					ft_atoi(char *str);
+int					ft_atoi(const char *str);
 
 char				*ft_strdup(char const *s1);
 

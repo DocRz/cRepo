@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 15:01:44 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/09 14:21:40 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/13 12:35:50 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	int c;
-
 	if (s && fd != -1)
 	{
-		c = -1;
-		while (s[++c])
-			write(fd, &s[c], 1);
+		write(fd, s, ft_strlen(s));
 		write(fd, "\n", 1);
 	}
 }

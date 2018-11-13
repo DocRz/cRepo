@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 15:02:14 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/08 14:44:36 by anrzepec         ###   ########.fr       */
+/*   Updated: 2018/11/13 11:01:19 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		ft_putnbr(int n)
 	if (n < 0)
 	{
 		ft_putchar('-');
-		if (n == MIN_INT)
+		if (n == _MIN_INT_)
 		{
 			n = 147483648;
 			ft_putchar('2');
