@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char_count.c                                       :+:      :+:    :+:   */
+/*   ft_fmod.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/03 12:27:07 by anrzepec          #+#    #+#             */
-/*   Updated: 2019/01/07 11:58:59 by anrzepec         ###   ########.fr       */
+/*   Created: 2019/02/04 10:25:08 by anrzepec          #+#    #+#             */
+/*   Updated: 2019/02/07 12:33:18 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		char_count(char *s, char c)
+long long			fast_floor(long double x)
 {
-	int	i;
-	int	count;
+	long long	xi;
 
-	i = 0;
-	count = 0;
-	if (s)
-	{
-		while (s[i])
-		{
-			if (s[i] == c)
-				count++;
-			i++;
-		}
-	}
-	return (count);
+	xi = (long long)x;
+	return (x < xi ? xi - 1 : xi);
+}
+
+long double			ft_fmod(long double nb, long double mod)
+{
+	return (nb - mod * fast_floor(nb / mod));
 }

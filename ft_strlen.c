@@ -6,7 +6,7 @@
 /*   By: anrzepec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 15:08:50 by anrzepec          #+#    #+#             */
-/*   Updated: 2018/11/10 17:48:40 by anrzepec         ###   ########.fr       */
+/*   Updated: 2019/01/03 13:09:02 by anrzepec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ size_t		ft_strlen(const char *str)
 	size_t i;
 
 	i = 0;
-	while (str[i])
-		i++;
+	if (str)
+	{
+		while (str[i])
+			i++;
+	}
 	return (i);
 }
