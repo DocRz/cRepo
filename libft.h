@@ -6,7 +6,7 @@
 /*   By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 19:12:29 by anrzepec          #+#    #+#             */
-/*   Updated: 2019/02/08 13:12:03 by anrzepec         ###   ########.fr       */
+/*   Updated: 2019/02/11 17:11:24 by andrewrze        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <string.h>
 # include "get_next_line.h"
+# include "ft_printf/ft_printf.h"
 
 typedef struct		s_list
 {
@@ -167,6 +168,6 @@ int					ft_strupper(char const *s);
 
 int					ft_strlower(char const *s);
 
-int					char_count(char *s, char c);
+int					ft_char_count(char *s, char c);
 
 #endif
