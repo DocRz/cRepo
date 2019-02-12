@@ -6,14 +6,14 @@
 #    By: anrzepec <anrzepec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/17 19:12:20 by anrzepec          #+#    #+#              #
-#    Updated: 2019/02/08 13:08:45 by anrzepec         ###   ########.fr        #
+#    Updated: 2019/02/12 16:05:47 by anrzepec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 	= 	libftprintf.a
 
 SRC 	= 	ft_printf.c \
-			format_parser.c \
+			ft_format_parser.c \
 			ft_apply_flags.c \
 			ft_attributes.c \
 			ft_struct_settings.c \
